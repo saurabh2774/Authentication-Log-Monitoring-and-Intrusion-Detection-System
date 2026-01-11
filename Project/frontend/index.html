@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intrusion Detection Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Intrusion Detection Dashboard</h1>
+
+<!-- Summary Cards -->
+<div class="cards">
+  <div class="card high">HIGH: <span id="highCount">0</span></div>
+  <div class="card medium">MEDIUM: <span id="mediumCount">0</span></div>
+  <div class="card low">LOW: <span id="lowCount">0</span></div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <input type="text" id="searchInput" placeholder="Search by IP">
+  <div class="filters">
+    <button onclick="setFilter('ALL')">All</button>
+    <button onclick="setFilter('HIGH')">High</button>
+    <button onclick="setFilter('MEDIUM')">Medium</button>
+    <button onclick="setFilter('LOW')">Low</button>
+  </div>
+</div>
+
+<p id="lastUpdated">Last updated: --</p>
+
+<!-- Table -->
+<table>
+  <thead>
+    <tr>
+      <th>IP Address</th>
+      <th>Attempts</th>
+      <th>Attack Type</th>
+      <th>Severity</th>
+      <th>Prevention</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody id="reportTable"></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
